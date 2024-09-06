@@ -1,0 +1,42 @@
+﻿@page
+@using WebApplication1.Models
+@model WebApplication1.Pages.UserModel
+@{
+
+    <h1>User</h1>
+
+    <form method="post">
+    <input type="number" name="id"/>
+      <input type="text" name="name"/>
+      <input type="email" name="email" />
+      <input type="password" name="password"/>
+    <button type="submit">Add</button>
+    </form>
+    <table class="table">
+    <thead>
+    <tr>
+    <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+    </tr>
+    </thead>
+    @foreach(User user in Model.Users)
+        {
+            <tr>
+            <td>
+            @user.Id
+            </td>
+            
+            <td>
+            @user.Name
+            </td>
+            <td>
+            @user.Email
+            </td>
+              
+            </tr>
+        }
+
+    </table>
+}
